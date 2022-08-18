@@ -1,0 +1,15 @@
+{
+    "name": "steve/gizlo",
+    "description": "Prueba Gizlo",
+    "autoload": {
+        "psr-4": {
+            "Steve\\Gizlo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "StevenRdz"
+        }
+    ],
+    "require": {}
+}
