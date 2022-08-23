@@ -22,18 +22,15 @@
     "symfony/translation": "~2.8|^3.0",
     "symfony/twig-bridge": "~2.8|^3.0",
     "symfony/validator": "~2.8|^3.0",
-    "kushki/kushki-php": "^1.2.3",
     "swiftmailer/swiftmailer": "^5.4",
-    "doctrine/dbal": "~2.2"
+    "doctrine/dbal": "~2.2",
+    "firebase/php-jwt": "^6.3",
+    "paragonie/sodium_compat": "^1.17",
+    "asm89/stack-cors": "*"
   },
   "autoload": {
     "psr-0": {
       "": "src/"
-    }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "2.0.x-dev"
     }
   },
   "scripts": {
@@ -41,5 +38,6 @@
       "echo 'Started web server on http://localhost:8888'",
       "php -S localhost:8888 -t web"
     ]
-  }
+  },
+  "config": {}
 }

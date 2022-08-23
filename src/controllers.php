@@ -5,21 +5,17 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 use Helper\DataService;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
-$app->get('/', function (Request $request) use ($app) {
-    
-    $dataService = new DataService();
-    $data['consulta']= $dataService->consultaUsuario($app['dbs']['pruebas']);
+//INICIO DE USUARIO
+$app->post('/api/auth/login', 'auth.controller:login')->bind('login');
 
-    echo '<pre>';
-    var_dump(array("login" =>$data));
-    echo '</pre>';
-    return $app['twig']->render('index.html.twig');
-})->bind('homepage');
+//REGISTRO USUARIO
+$app->post('/api/auth/register', 'auth.controller:register')->bind('register');
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
